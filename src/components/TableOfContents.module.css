@@ -1,0 +1,66 @@
+.toc {
+  width: 220px;
+  padding: 1rem;
+  border-left: 1px solid var(--color-border);
+  background: var(--color-bg-primary);
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link {
+  display: block;
+  padding: 4px 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  line-height: 1.5;
+}
+
+.link:hover {
+  color: var(--color-text-primary);
+}
+
+.linkActive {
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.level1 {
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.level2 {
+  padding-left: 12px;
+}
+
+.level3 {
+  padding-left: 24px;
+  font-size: 0.75rem;
+}
+
+.level4 {
+  padding-left: 36px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
