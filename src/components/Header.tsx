@@ -7,10 +7,12 @@ import {
   Download,
   Share,
   Settings,
+  MousePointer2,
 } from "lucide-react";
 import styles from "./Header.module.css";
 
 type ViewMode = "editor" | "preview" | "split";
+type EditorMode = "code" | "visual";
 
 interface HeaderProps {
   viewMode: ViewMode;
@@ -18,6 +20,8 @@ interface HeaderProps {
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
   title: string;
+  editorMode?: EditorMode;
+  onEditorModeChange?: (mode: EditorMode) => void;
 }
 
 export function Header({
@@ -26,6 +30,8 @@ export function Header({
   sidebarOpen,
   onToggleSidebar,
   title,
+  editorMode = "code",
+  onEditorModeChange,
 }: HeaderProps) {
   return (
     <header className={styles.header}>
@@ -49,6 +55,35 @@ export function Header({
       </div>
 
       <div className={styles.center}>
+        {/* Editor Mode Toggle */}
+        {onEditorModeChange && (
+          <div className={styles.editorModeToggle}>
+            <button
+              className={`${styles.modeButton} ${
+                editorMode === "code" ? styles.modeButtonActive : ""
+              }`}
+              onClick={() => onEditorModeChange("code")}
+              aria-label="Code editor"
+            >
+              <Code2 size={14} />
+              <span>Code</span>
+            </button>
+            <button
+              className={`${styles.modeButton} ${
+                editorMode === "visual" ? styles.modeButtonActive : ""
+              }`}
+              onClick={() => onEditorModeChange("visual")}
+              aria-label="Visual editor"
+            >
+              <MousePointer2 size={14} />
+              <span>Visual</span>
+            </button>
+          </div>
+        )}
+
+        <div className={styles.divider} />
+
+        {/* View Mode Toggle */}
         <div className={styles.viewToggle}>
           <button
             className={`${styles.viewButton} ${

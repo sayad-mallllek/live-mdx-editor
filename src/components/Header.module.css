@@ -17,12 +17,51 @@
 .center {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 .right {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border);
+}
+
+.editorModeToggle {
+  display: flex;
+  align-items: center;
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(12, 206, 107, 0.2);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 2px;
+}
+
+.modeButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.modeButton:hover {
+  color: var(--color-accent);
+}
+
+.modeButtonActive {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
 }
 
 .iconButton {
